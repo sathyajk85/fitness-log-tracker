@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Calendar, Activity, Utensils, MessageSquare, LineChart as ChartIcon, Settings, Plus, Camera, ChevronLeft, ChevronRight, Dumbbell } from 'lucide-react';
 
@@ -13,7 +13,7 @@ export default function RecompTracker() {
   // Daily Logs State
   const [steps, setSteps] = useState(15200);
   const [foodLog, setFoodLog] = useState([{ id: 1, text: "Roasted chicken rice, extra char siew", cals: 800, pro: 46 }]);
-  const [exerciseLog, setExerciseLog] = useState([]);
+  const [exerciseLog, setExerciseLog] = useState<{ id: number; text: string }[]>([]);
   const [newFood, setNewFood] = useState("");
   const [newExercise, setNewExercise] = useState("");
 
@@ -33,7 +33,7 @@ export default function RecompTracker() {
     { date: '05-11', weight: 71.5, bodyFat: 21.5 },
   ];
 
-  const formatDate = (dateString) => {
+  const formatDate = (dateString: string) => {
     const [year, month, day] = dateString.split('-');
     return `${day}-${month}-${year}`;
   };
