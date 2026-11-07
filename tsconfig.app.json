@@ -24,3 +24,9 @@
   },
   "include": ["src"]
 }
+{
+  "compilerOptions": {
+    "noUnusedLocals": false,
+    "noImplicitAny": false
+  }
+}
